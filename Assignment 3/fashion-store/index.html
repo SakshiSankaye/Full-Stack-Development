@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FashionKart</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">FashionKart</a>
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="products.html">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link position-relative" href="cart.html">
+            Cart
+            <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">
+              <span id="cart-count">0</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="banner text-white text-center">
+  <div class="container">
+    <h1>Big Fashion Sale 2026</h1>
+    <p>Up to 60% Off on Top Brands</p>
+    <a href="products.html" class="btn btn-warning btn-lg">Shop Now</a>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<div class="container mt-4">
+  <div class="d-flex justify-content-center gap-3 flex-wrap category-row">
+    <button class="category-btn" onclick="filterCategory('Men')">Men</button>
+    <button class="category-btn" onclick="filterCategory('Women')">Women</button>
+    <button class="category-btn" onclick="filterCategory('Shoes')">Shoes</button>
+    <button class="category-btn" onclick="filterCategory('Accessories')">Accessories</button>
+  </div>
+</div>
+
+<!-- PRODUCTS -->
+<div class="container mt-5">
+  <h3 class="mb-4">Trending Products</h3>
+  <div class="row" id="product-container"></div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white mt-5 p-4 text-center">
+  <p>© 2026 FashionKart | Designed by Sakshi</p>
+  <p>
+    <a href="index.html" class="text-white me-3">Home</a>
+    <a href="products.html" class="text-white me-3">Products</a>
+    <a href="cart.html" class="text-white">Cart</a>
+  </p>
+</footer>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
