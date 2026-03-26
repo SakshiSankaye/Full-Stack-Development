@@ -1,22 +1,23 @@
-Assignment 3: E-Commerce Website
-Problem Statement
+# Assignment 3: E-Commerce Website
+
+# Problem Statement
 
 Design and develop a basic e-commerce website interface that allows users to browse products and interact with a shopping cart using HTML, CSS, and JavaScript.
 
-Objective
+# Objective
 
 To understand the structure of an e-commerce webpage.
 To implement product display and cart interaction.
 To practice frontend development using HTML, CSS, and JavaScript.
 To enhance user interface design and webpage functionality.
 
-Technologies Used
+# Technologies Used
 
 HTML
 CSS
 JavaScript
 
-Description
+# Description
 
 This assignment demonstrates the development of a simple e-commerce web application interface. The webpage allows users to view products and interact with a basic shopping cart functionality.
 
@@ -24,14 +25,14 @@ HTML is used to create the webpage structure, CSS is applied for styling and lay
 
 The website includes product display sections, navigation elements, and a cart page where selected items can be viewed.
 
-Features
+# Features
 
 Product listing with images and details.
 Add to cart functionality using JavaScript.
 Simple and responsive webpage layout.
 Separate cart page to view selected items.
 
-Folder Structure
+# Folder Structure
 Assignment 3
 │
 ├── Outputs
@@ -55,7 +56,7 @@ Assignment 3
     ├── register.html
     ├── script.js
     └── style.css
-Output
+# Output
 Output 1
 
 Outputs/output 1.png
@@ -88,6 +89,6 @@ Output 8
 
 Outputs/output 8.png
 
-Conclusion
+# Conclusion
 
 This assignment helped in understanding how an e-commerce website interface works. It provided practical experience in building interactive web pages using HTML, CSS, and JavaScript and implementing basic shopping cart functionality.
