@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <!--
+    ╔══════════════════════════════════════════════════════════════╗
+    ║  Global Weather Dashboard — index.html                      ║
+    ║  Author : Weather Dashboard Project                         ║
+    ║  Stack  : HTML5 · CSS3 (style.css) · JS (script.js)        ║
+    ║           Chart.js 4.4 · Google Fonts                       ║
+    ╚══════════════════════════════════════════════════════════════╝
+
+    HOW TO RUN
+    ──────────
+    Option A (recommended — avoids data.json CORS issue):
+      Install VS Code + Live Server extension → right-click index.html → "Open with Live Server"
+
+    Option B (Node.js):
+      npx serve .        (in this folder)
+      Then open http://localhost:3000
+
+    Option C (Python):
+      python -m http.server 8080
+      Then open http://localhost:8080
+
+    ⚠  Opening index.html directly (file://) may block data.json
+       fetch in some browsers. The app falls back to inline data
+       automatically, so most cities still work.
+
+    CONNECTING THE REAL API
+    ───────────────────────
+    1. Visit https://openweathermap.org/api and create a free account.
+    2. Copy your API key from the dashboard.
+    3. Open script.js and set:
+         API_KEY: 'your_actual_key_here',
+         USE_REAL_API: true,
+    4. Save and refresh — all cities in the world now work!
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Global Weather Dashboard — real-time weather for any city worldwide" />
+  <title>Global Weather Dashboard</title>
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛅</text></svg>" />
+
+  <!-- Chart.js from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" defer></script>
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- =====================================================================
+     LOADING OVERLAY
+     Shown while fetching weather data
+====================================================================== -->
+<div id="loadingOverlay" role="status" aria-label="Loading weather data">
+  <div class="loader-ring"></div>
+  <span class="loader-text">Fetching weather…</span>
+</div>
+
+<!-- =====================================================================
+     TOAST NOTIFICATION
+     Appears at bottom center for errors / success messages
+====================================================================== -->
+<div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+<!-- =====================================================================
+     APP SHELL
+====================================================================== -->
+<div class="app-shell">
+
+  <!-- ── GLOBAL HEADER ─────────────────────────────────────────────── -->
+  <header class="app-header">
+    <!-- Brand / logo -->
+    <a class="brand" href="#" onclick="return false;" aria-label="Global Weather Dashboard home">
+      <div class="brand-mark" aria-hidden="true">⛅</div>
+      <h1 class="brand-title">Global <span>Weather</span> Dashboard</h1>
+    </a>
+
+    <!-- Header controls: dark mode, etc. -->
+    <nav class="header-controls">
+      <button class="btn btn-ghost" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <span id="themeIcon">🌙</span>
+        <span id="themeLabel">Dark Mode</span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ==================================================================
+       PAGE: HOME
+       The initial landing / search page
+  =================================================================== -->
+  <main id="page-home" class="page active" role="main">
+
+    <!-- Hero section -->
+    <section class="home-hero" aria-labelledby="heroHeading">
+
+      <!-- <div class="hero-eyebrow" aria-hidden="true">
+        🌍 Weather for any city on Earth
+      </div> -->
+
+      <h2 class="hero-heading" id="heroHeading">
+        Know the <em>sky</em> before<br />you step outside
+      </h2>
+
+      <p class="hero-sub">
+        Search any city worldwide for current conditions,
+        7-day forecasts, and detailed charts.
+      </p>
+
+      <!-- Search bar -->
+      <div class="search-bar" role="search">
+        <div class="search-input-wrap">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="City name — e.g. Mumbai, Paris, Tokyo…"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+            aria-label="Search for a city"
+          />
+        </div>
+
+        <!-- Auto-locate -->
+        <button class="locate-btn" id="locateBtn" title="Detect my location" aria-label="Detect my location">
+          📍
+        </button>
+
+        <!-- Submit -->
+        <button class="search-btn-main" id="searchBtn" type="button" aria-label="Search weather">
+          <span>Search</span>
+          <span aria-hidden="true">→</span>
+        </button>
+      </div>
+
+      <!-- Quick-access city chips -->
+      <div class="chips-row" role="list" aria-label="Popular cities">
+        <button class="chip" data-city="Mumbai"    role="listitem">🇮🇳 Mumbai</button>
+        <button class="chip" data-city="New York"  role="listitem">🗽 New York</button>
+        <button class="chip" data-city="London"    role="listitem">🇬🇧 London</button>
+        <button class="chip" data-city="Tokyo"     role="listitem">🗾 Tokyo</button>
+        <button class="chip" data-city="Paris"     role="listitem">🗼 Paris</button>
+        <button class="chip" data-city="Sydney"    role="listitem">🦘 Sydney</button>
+        <button class="chip" data-city="Dubai"     role="listitem">🏙️ Dubai</button>
+        <button class="chip" data-city="Singapore" role="listitem">🌴 Singapore</button>
+      </div>
+
+    </section><!-- /home-hero -->
+
+    <!-- Search History Section -->
+    <!--
+      localStorage key: wx_history
+      Format: JSON array of { city, country, timestamp, temp, condition, code }
+      Managed by StorageManager in script.js
+    -->
+    <section class="history-section" id="historySection" aria-labelledby="historyLabel">
+      <div class="section-label" id="historyLabel">Recent searches</div>
+      <div class="history-list" id="historyList" role="list"></div>
+    </section>
+
+  </main><!-- /page-home -->
+
+  <!-- ==================================================================
+       PAGE: DASHBOARD
+       Full weather view after a city is searched
+  =================================================================== -->
+  <div id="page-dashboard" class="page" role="main">
+
+    <!-- Dashboard top bar: city name + back button -->
+    <div class="dash-header">
+      <div class="dash-city-group">
+        <h2 class="dash-city">
+          <span id="dashCity">—</span>
+          <span class="country-badge" id="dashCountry">—</span>
+        </h2>
+        <p class="dash-meta" id="dashMeta"></p>
+      </div>
+
+      <div class="dash-actions">
+        <!-- Back to home -->
+        <button class="btn btn-ghost" id="backBtn" aria-label="Back to home search">
+          ← Back to Home
+        </button>
+      </div>
+    </div>
+
+    <!-- ── Current weather hero card ─────────────────────────────── -->
+    <section class="current-hero" aria-label="Current weather conditions">
+
+      <!-- Temperature & icon -->
+      <div class="hero-temp-group">
+        <div class="hero-weather-icon" id="heroIcon" aria-hidden="true">☀️</div>
+        <div>
+          <div class="hero-temp" id="heroTemp" aria-label="Temperature">—</div>
+          <div class="hero-condition-label" id="heroCondition">—</div>
+          <div class="hero-feels" id="heroFeels">—</div>
+        </div>
+      </div>
+
+      <!-- Humidity / Wind / Pressure / Visibility mini stats -->
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-label">💧 Humidity</div>
+          <div class="hero-stat-value" id="heroHumidity">—</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-label">💨 Wind</div>
+          <div class="hero-stat-value" id="heroWind">—</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-label">📊 Pressure</div>
+          <div class="hero-stat-value" id="heroPressure">—</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-label">👁️ Visibility</div>
+          <div class="hero-stat-value" id="heroVisibility">—</div>
+        </div>
+      </div>
+
+    </section><!-- /current-hero -->
+
+    <!-- ── Secondary stat cards ──────────────────────────────────── -->
+    <div class="stats-grid" aria-label="Additional statistics">
+      <div class="stat-card">
+        <div class="stat-pip pip-violet">🌞</div>
+        <div>
+          <div class="stat-label">UV Index</div>
+          <div class="stat-value" id="statUV">—</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-pip pip-sky">🧭</div>
+        <div>
+          <div class="stat-label">Wind Direction</div>
+          <div class="stat-value" id="statDir">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 7-day forecast strip ───────────────────────────────────── -->
+    <section aria-label="7-day forecast">
+      <div class="section-label">7-Day Forecast</div>
+      <div class="forecast-strip" id="forecastStrip"></div>
+    </section>
+
+    <!-- ── Charts ────────────────────────────────────────────────── -->
+    <section aria-label="Weather charts" style="margin-top: 8px;">
+      <div class="section-label">Analytics</div>
+
+      <div class="charts-grid">
+
+        <!-- Temperature Line Chart -->
+        <div class="chart-card">
+          <div class="chart-head">
+            <div class="chart-title">
+              <span class="chart-dot" style="background:#0ea5e9"></span>
+              Temperature Trend (°C)
+            </div>
+          </div>
+          <div class="chart-canvas-wrap">
+            <!--
+              tempChart: Line chart
+              Datasets: High temp (solid) + Low temp (dashed)
+              Updated by ChartManager.renderTempChart()
+            -->
+            <canvas id="tempChart" role="img" aria-label="Temperature line chart"></canvas>
+          </div>
+        </div>
+
+        <!-- Humidity Bar Chart -->
+        <div class="chart-card">
+          <div class="chart-head">
+            <div class="chart-title">
+              <span class="chart-dot" style="background:#38bdf8"></span>
+              Humidity Levels (%)
+            </div>
+          </div>
+          <div class="chart-canvas-wrap">
+            <!--
+              humidChart: Bar chart
+              Bars color-coded by humidity intensity
+              Updated by ChartManager.renderHumidChart()
+            -->
+            <canvas id="humidChart" role="img" aria-label="Humidity bar chart"></canvas>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /page-dashboard -->
+
+</div><!-- /app-shell -->
+
+<!-- App script (defer ensures DOM is ready) -->
+<script src="script.js" defer></script>
+
+</body>
+</html>

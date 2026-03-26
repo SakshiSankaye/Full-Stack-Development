@@ -1,0 +1,238 @@
+{
+  "_comment": "Mock weather database. Each city key maps to current conditions + 7-day forecast.",
+  "_api_note": "When using OpenWeatherMap API, this file acts as a cache/fallback. Set API_KEY in script.js.",
+
+  "cities": {
+    "mumbai": {
+      "name": "Mumbai",
+      "country": "IN",
+      "lat": 19.0760,
+      "lon": 72.8777,
+      "current": {
+        "temperature": 33,
+        "feels_like": 38,
+        "humidity": 82,
+        "wind_speed": 22,
+        "wind_dir": "SW",
+        "condition": "Partly Cloudy",
+        "condition_code": "cloudy",
+        "uv_index": 8,
+        "visibility": 6,
+        "pressure": 1008
+      },
+      "forecast": [
+        { "date": "Mon", "high": 34, "low": 28, "humidity": 82, "wind": 22, "condition": "Partly Cloudy", "code": "cloudy" },
+        { "date": "Tue", "high": 31, "low": 27, "humidity": 87, "wind": 25, "condition": "Rainy",         "code": "rainy"  },
+        { "date": "Wed", "high": 29, "low": 26, "humidity": 91, "wind": 30, "condition": "Heavy Rain",    "code": "rainy"  },
+        { "date": "Thu", "high": 28, "low": 26, "humidity": 88, "wind": 28, "condition": "Rainy",         "code": "rainy"  },
+        { "date": "Fri", "high": 30, "low": 27, "humidity": 84, "wind": 20, "condition": "Cloudy",        "code": "cloudy" },
+        { "date": "Sat", "high": 32, "low": 27, "humidity": 79, "wind": 17, "condition": "Sunny",         "code": "sunny"  },
+        { "date": "Sun", "high": 34, "low": 28, "humidity": 75, "wind": 14, "condition": "Sunny",         "code": "sunny"  }
+      ]
+    },
+
+    "new york": {
+      "name": "New York",
+      "country": "US",
+      "lat": 40.7128,
+      "lon": -74.0060,
+      "current": {
+        "temperature": 15,
+        "feels_like": 13,
+        "humidity": 55,
+        "wind_speed": 29,
+        "wind_dir": "NW",
+        "condition": "Windy",
+        "condition_code": "windy",
+        "uv_index": 5,
+        "visibility": 12,
+        "pressure": 1018
+      },
+      "forecast": [
+        { "date": "Mon", "high": 15, "low": 9,  "humidity": 55, "wind": 29, "condition": "Windy",   "code": "windy"  },
+        { "date": "Tue", "high": 12, "low": 7,  "humidity": 64, "wind": 34, "condition": "Rainy",   "code": "rainy"  },
+        { "date": "Wed", "high": 10, "low": 5,  "humidity": 72, "wind": 42, "condition": "Stormy",  "code": "stormy" },
+        { "date": "Thu", "high": 11, "low": 6,  "humidity": 66, "wind": 32, "condition": "Cloudy",  "code": "cloudy" },
+        { "date": "Fri", "high": 16, "low": 9,  "humidity": 50, "wind": 22, "condition": "Cloudy",  "code": "cloudy" },
+        { "date": "Sat", "high": 18, "low": 11, "humidity": 44, "wind": 18, "condition": "Sunny",   "code": "sunny"  },
+        { "date": "Sun", "high": 21, "low": 13, "humidity": 40, "wind": 15, "condition": "Sunny",   "code": "sunny"  }
+      ]
+    },
+
+    "london": {
+      "name": "London",
+      "country": "GB",
+      "lat": 51.5074,
+      "lon": -0.1278,
+      "current": {
+        "temperature": 12,
+        "feels_like": 10,
+        "humidity": 74,
+        "wind_speed": 23,
+        "wind_dir": "W",
+        "condition": "Drizzle",
+        "condition_code": "rainy",
+        "uv_index": 3,
+        "visibility": 8,
+        "pressure": 1012
+      },
+      "forecast": [
+        { "date": "Mon", "high": 12, "low": 7,  "humidity": 74, "wind": 23, "condition": "Drizzle",  "code": "rainy"  },
+        { "date": "Tue", "high": 10, "low": 6,  "humidity": 80, "wind": 27, "condition": "Rainy",    "code": "rainy"  },
+        { "date": "Wed", "high": 11, "low": 7,  "humidity": 70, "wind": 22, "condition": "Cloudy",   "code": "cloudy" },
+        { "date": "Thu", "high": 13, "low": 8,  "humidity": 65, "wind": 19, "condition": "Cloudy",   "code": "cloudy" },
+        { "date": "Fri", "high": 15, "low": 9,  "humidity": 60, "wind": 18, "condition": "Sunny",    "code": "sunny"  },
+        { "date": "Sat", "high": 14, "low": 8,  "humidity": 63, "wind": 20, "condition": "Cloudy",   "code": "cloudy" },
+        { "date": "Sun", "high": 13, "low": 7,  "humidity": 68, "wind": 24, "condition": "Drizzle",  "code": "rainy"  }
+      ]
+    },
+
+    "tokyo": {
+      "name": "Tokyo",
+      "country": "JP",
+      "lat": 35.6762,
+      "lon": 139.6503,
+      "current": {
+        "temperature": 19,
+        "feels_like": 18,
+        "humidity": 61,
+        "wind_speed": 15,
+        "wind_dir": "NE",
+        "condition": "Clear",
+        "condition_code": "sunny",
+        "uv_index": 6,
+        "visibility": 14,
+        "pressure": 1020
+      },
+      "forecast": [
+        { "date": "Mon", "high": 19, "low": 12, "humidity": 61, "wind": 15, "condition": "Clear",   "code": "sunny"  },
+        { "date": "Tue", "high": 21, "low": 13, "humidity": 57, "wind": 13, "condition": "Sunny",   "code": "sunny"  },
+        { "date": "Wed", "high": 18, "low": 11, "humidity": 69, "wind": 19, "condition": "Cloudy",  "code": "cloudy" },
+        { "date": "Thu", "high": 15, "low": 10, "humidity": 75, "wind": 22, "condition": "Rainy",   "code": "rainy"  },
+        { "date": "Fri", "high": 16, "low": 10, "humidity": 71, "wind": 18, "condition": "Cloudy",  "code": "cloudy" },
+        { "date": "Sat", "high": 20, "low": 12, "humidity": 63, "wind": 14, "condition": "Sunny",   "code": "sunny"  },
+        { "date": "Sun", "high": 22, "low": 13, "humidity": 58, "wind": 12, "condition": "Sunny",   "code": "sunny"  }
+      ]
+    },
+
+    "paris": {
+      "name": "Paris",
+      "country": "FR",
+      "lat": 48.8566,
+      "lon": 2.3522,
+      "current": {
+        "temperature": 17,
+        "feels_like": 15,
+        "humidity": 62,
+        "wind_speed": 19,
+        "wind_dir": "W",
+        "condition": "Partly Sunny",
+        "condition_code": "cloudy",
+        "uv_index": 4,
+        "visibility": 10,
+        "pressure": 1016
+      },
+      "forecast": [
+        { "date": "Mon", "high": 17, "low": 10, "humidity": 62, "wind": 19, "condition": "Partly Sunny", "code": "cloudy" },
+        { "date": "Tue", "high": 14, "low": 8,  "humidity": 70, "wind": 23, "condition": "Rainy",        "code": "rainy"  },
+        { "date": "Wed", "high": 13, "low": 7,  "humidity": 76, "wind": 26, "condition": "Rainy",        "code": "rainy"  },
+        { "date": "Thu", "high": 15, "low": 9,  "humidity": 66, "wind": 20, "condition": "Cloudy",       "code": "cloudy" },
+        { "date": "Fri", "high": 18, "low": 10, "humidity": 58, "wind": 17, "condition": "Sunny",        "code": "sunny"  },
+        { "date": "Sat", "high": 20, "low": 11, "humidity": 53, "wind": 15, "condition": "Sunny",        "code": "sunny"  },
+        { "date": "Sun", "high": 19, "low": 10, "humidity": 56, "wind": 16, "condition": "Partly Sunny", "code": "cloudy" }
+      ]
+    },
+
+    "sydney": {
+      "name": "Sydney",
+      "country": "AU",
+      "lat": -33.8688,
+      "lon": 151.2093,
+      "current": {
+        "temperature": 23,
+        "feels_like": 22,
+        "humidity": 64,
+        "wind_speed": 20,
+        "wind_dir": "SE",
+        "condition": "Sunny",
+        "condition_code": "sunny",
+        "uv_index": 7,
+        "visibility": 13,
+        "pressure": 1019
+      },
+      "forecast": [
+        { "date": "Mon", "high": 23, "low": 16, "humidity": 64, "wind": 20, "condition": "Sunny",   "code": "sunny"  },
+        { "date": "Tue", "high": 25, "low": 17, "humidity": 60, "wind": 18, "condition": "Sunny",   "code": "sunny"  },
+        { "date": "Wed", "high": 22, "low": 15, "humidity": 70, "wind": 24, "condition": "Windy",   "code": "windy"  },
+        { "date": "Thu", "high": 19, "low": 13, "humidity": 76, "wind": 31, "condition": "Rainy",   "code": "rainy"  },
+        { "date": "Fri", "high": 21, "low": 14, "humidity": 72, "wind": 26, "condition": "Cloudy",  "code": "cloudy" },
+        { "date": "Sat", "high": 24, "low": 16, "humidity": 63, "wind": 18, "condition": "Sunny",   "code": "sunny"  },
+        { "date": "Sun", "high": 26, "low": 17, "humidity": 58, "wind": 15, "condition": "Sunny",   "code": "sunny"  }
+      ]
+    },
+
+    "dubai": {
+      "name": "Dubai",
+      "country": "AE",
+      "lat": 25.2048,
+      "lon": 55.2708,
+      "current": {
+        "temperature": 38,
+        "feels_like": 43,
+        "humidity": 45,
+        "wind_speed": 16,
+        "wind_dir": "NW",
+        "condition": "Hot & Sunny",
+        "condition_code": "sunny",
+        "uv_index": 11,
+        "visibility": 9,
+        "pressure": 1004
+      },
+      "forecast": [
+        { "date": "Mon", "high": 38, "low": 30, "humidity": 45, "wind": 16, "condition": "Sunny",   "code": "sunny"  },
+        { "date": "Tue", "high": 39, "low": 31, "humidity": 42, "wind": 14, "condition": "Sunny",   "code": "sunny"  },
+        { "date": "Wed", "high": 40, "low": 31, "humidity": 40, "wind": 12, "condition": "Sunny",   "code": "sunny"  },
+        { "date": "Thu", "high": 38, "low": 30, "humidity": 46, "wind": 18, "condition": "Hazy",    "code": "cloudy" },
+        { "date": "Fri", "high": 37, "low": 29, "humidity": 48, "wind": 20, "condition": "Hazy",    "code": "cloudy" },
+        { "date": "Sat", "high": 39, "low": 30, "humidity": 43, "wind": 15, "condition": "Sunny",   "code": "sunny"  },
+        { "date": "Sun", "high": 40, "low": 31, "humidity": 41, "wind": 13, "condition": "Sunny",   "code": "sunny"  }
+      ]
+    },
+
+    "singapore": {
+      "name": "Singapore",
+      "country": "SG",
+      "lat": 1.3521,
+      "lon": 103.8198,
+      "current": {
+        "temperature": 30,
+        "feels_like": 35,
+        "humidity": 83,
+        "wind_speed": 12,
+        "wind_dir": "S",
+        "condition": "Thunderstorm",
+        "condition_code": "stormy",
+        "uv_index": 9,
+        "visibility": 5,
+        "pressure": 1010
+      },
+      "forecast": [
+        { "date": "Mon", "high": 30, "low": 24, "humidity": 83, "wind": 12, "condition": "Thunderstorm", "code": "stormy" },
+        { "date": "Tue", "high": 29, "low": 23, "humidity": 86, "wind": 14, "condition": "Rainy",        "code": "rainy"  },
+        { "date": "Wed", "high": 31, "low": 25, "humidity": 80, "wind": 11, "condition": "Partly Cloudy","code": "cloudy" },
+        { "date": "Thu", "high": 32, "low": 25, "humidity": 78, "wind": 10, "condition": "Sunny",        "code": "sunny"  },
+        { "date": "Fri", "high": 30, "low": 24, "humidity": 82, "wind": 13, "condition": "Rainy",        "code": "rainy"  },
+        { "date": "Sat", "high": 29, "low": 23, "humidity": 85, "wind": 15, "condition": "Rainy",        "code": "rainy"  },
+        { "date": "Sun", "high": 31, "low": 25, "humidity": 79, "wind": 11, "condition": "Cloudy",       "code": "cloudy" }
+      ]
+    }
+  },
+
+  "search_history_schema": {
+    "_note": "localStorage stores this array under key 'wx_history'",
+    "example": [
+      { "city": "Mumbai",   "timestamp": 1712000000000, "temp": 33, "condition": "Partly Cloudy" },
+      { "city": "New York", "timestamp": 1711990000000, "temp": 15, "condition": "Windy" }
+    ]
+  }
+}
