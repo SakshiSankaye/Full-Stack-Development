@@ -28,8 +28,8 @@ The webpage is designed using HTML for structure and CSS for styling to improve 
     Ass1
     ├── Assignment No1.html
     └── Outputs
-        ├── Output1.png
-        └── Output2.png
+        ├── output1.png
+        └── output2.png
     └──README.md
 
 ## Output
