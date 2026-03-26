@@ -69,25 +69,12 @@ Assignment 2
 ## 📸 Output
 
 ### Output 1
-![Output1](Outputs/output%201.png)
+![Output1](Outputs/output1.png)
 
 ### Output 2
-![Output2](Outputs/output%202.png)
+![Output2](Outputs/output2.png)
 
-### Output 3
-![Output3](Outputs/output%203.png)
 
-### Output 4
-![Output4](Outputs/output%204.png)
-
-### Output 5
-![Output5](Outputs/output%205.png)
-
-### Output 6
-![Output6](Outputs/output%206.png)
-
-### Output 7
-![Output7](Outputs/output%207.png)
 
 ---
 
