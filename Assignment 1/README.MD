@@ -28,17 +28,17 @@ The webpage is designed using HTML for structure and CSS for styling to improve 
     Ass1
     ├── Assignment No1.html
     └── Outputs
-        ├── Output1.png
-        └── Output2.png
+        ├── output1.png
+        └── output2.png
     └──README.md
 
 ## Output
 
 ### Output 1
-![Output1](Outputs/Output1.png)
+![Output1](Outputs/output1.png)
 
 ### Output 2
-![Output2](Outputs/Output2.png)
+![Output2](Outputs/output2.png)
 
 ## Conclusion
 This assignment helped in understanding the fundamentals of HTML and how different HTML tags are used to structure content on a webpage. It also provided practice in organizing information using tables and applying basic CSS styling.
