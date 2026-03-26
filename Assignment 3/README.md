@@ -56,39 +56,31 @@ Assignment 3
     ├── register.html
     ├── script.js
     └── style.css
-Output
-Output 1
+## Output  
 
-Outputs/output 1.png
+### Output 1  
+![Output 1](Outputs/output%201.png)
 
-Output 2
+### Output 2  
+![Output 2](Outputs/output%202.png)
 
-Outputs/output 2.png
+### Output 3  
+![Output 3](Outputs/output%203.png)
 
-Output 3
+### Output 4  
+![Output 4](Outputs/output%204.png)
 
-Outputs/output 3.png
+### Output 5  
+![Output 5](Outputs/output%205.png)
 
-Output 4
+### Output 6  
+![Output 6](Outputs/output%206.png)
 
-Outputs/output 4.png
+### Output 7  
+![Output 7](Outputs/output%207.png)
 
-Output 5
-
-Outputs/output 5.png
-
-Output 6
-
-Outputs/output 6.png
-
-Output 7
-
-Outputs/output 7.png
-
-Output 8
-
-Outputs/output 8.png
-
+### Output 8  
+![Output 8](Outputs/output%208.png)
 Conclusion
 
 This assignment helped in understanding how an e-commerce website interface works. It provided practical experience in building interactive web pages using HTML, CSS, and JavaScript and implementing basic shopping cart functionality.
