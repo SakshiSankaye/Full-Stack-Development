@@ -69,10 +69,10 @@ Assignment 2
 ## 📸 Output
 
 ### Output 1
-![Output1](Outputs/output1.png)
+![Output1](Outputs/output 1.png)
 
 ### Output 2
-![Output2](Outputs/output2.png)
+![Output2](Outputs/output 2.png)
 
 
 
