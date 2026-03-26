@@ -56,7 +56,7 @@ Assignment 3
     ├── register.html
     ├── script.js
     └── style.css
-# Output
+Output
 Output 1
 
 Outputs/output 1.png
@@ -89,6 +89,6 @@ Output 8
 
 Outputs/output 8.png
 
-# Conclusion
+Conclusion
 
 This assignment helped in understanding how an e-commerce website interface works. It provided practical experience in building interactive web pages using HTML, CSS, and JavaScript and implementing basic shopping cart functionality.
