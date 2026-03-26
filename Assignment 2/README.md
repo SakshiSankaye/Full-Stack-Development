@@ -75,19 +75,19 @@ Assignment 2
 ![Output2](Outputs/output 2.png)
 
 ### Output 3
-![Output3](Outputs/output3.png)
+![Output3](Outputs/output 3.png)
 
 ### Output 4
-![Output4](Outputs/output4.png)
+![Output4](Outputs/output 4.png)
 
 ### Output 5
-![Output5](Outputs/output5.png)
+![Output5](Outputs/output 5.png)
 
 ### Output 6
-![Output6](Outputs/output6.png)
+![Output6](Outputs/output 6.png)
 
 ### Output 7
-![Output7](Outputs/output7.png)
+![Output7](Outputs/output 7.png)
 
 ---
 
