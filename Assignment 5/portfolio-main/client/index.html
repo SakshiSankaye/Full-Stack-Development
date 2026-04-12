@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sakshi Sankaye - Software Developer Portfolio">
+    <title>Sakshi Sankaye | Web Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s ease-in-out infinite',
+                        'gradient': 'gradient 8s ease infinite',
+                        'bounce-slow': 'bounce 3s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-indigo-900 transition-all duration-500">
+    <!-- Custom Cursor -->
+<div id="custom-cursor" class="fixed w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full pointer-events-none z-[9999] mix-blend-difference transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-150 ease-out"></div>
+
+    <!-- Animated Background -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </div>
+
+   <!-- Navigation - Always Visible -->
+<nav id="site-header" class="fixed top-0 w-full bg-white/95 dark:bg-gray-900/95 backdrop-blur-md z-50 transition-all duration-300 shadow-lg border-b border-gray-200/20 dark:border-gray-700/20">
+    <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+            <div class="text-2xl font-bold text-gradient">Sakshi Sankaye</div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link active-nav">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button id="theme-toggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 transition-colors hover:bg-gray-300 dark:hover:bg-gray-600">
+                    <i id="theme-icon-light" class="fas fa-moon dark:hidden text-gray-800"></i>
+                    <i id="theme-icon-dark" class="fas fa-sun hidden dark:block text-yellow-400"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2">
+                <i class="fas fa-bars text-xl text-gray-800 dark:text-white"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden mt-4 pb-4 hidden">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="nav-link active-nav">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+                <button id="mobile-theme-toggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 w-fit">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
+        <div class="container mx-auto px-6 z-10">
+            <div class="glass-card p-8 md:p-12 max-w-6xl mx-auto fade-in">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <!-- Profile Image Column -->
+                    <div class="text-center md:order-1 order-2">
+                        <div class="relative inline-block">
+                            <!-- Animated rings around profile -->
+                            <div class="absolute inset-0 rounded-full border-4 border-blue-400/30 animate-spin" style="animation-duration: 8s;"></div>
+                            <div class="absolute inset-2 rounded-full border-2 border-purple-400/40 animate-spin" style="animation-duration: 6s; animation-direction: reverse;"></div>
+                            <div class="absolute inset-4 rounded-full border border-cyan-400/50 animate-pulse"></div>
+                            
+                            <!-- Profile Image -->
+                            <div class="relative w-80 h-80 mx-auto">
+                                <img src="images\profile.jpg.jpeg" 
+                                     alt="Sakshi Sankaye" 
+                                     class="profile-hero-image w-full h-full object-cover rounded-full border-8 border-white/20 shadow-2xl">
+                                
+                                <!-- Floating elements around image -->
+                                <div class="floating-icon absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg animate-bounce-slow">
+                                    <i class="fas fa-code text-white text-xl"></i>
+                                </div>
+                                <div class="floating-icon absolute -bottom-2 -left-4 w-12 h-12 bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center shadow-lg animate-float" style="animation-delay: 1s;">
+                                    <i class="fas fa-laptop-code text-white"></i>
+                                </div>
+                                <div class="floating-icon absolute top-1/2 -left-6 w-10 h-10 bg-gradient-to-r from-pink-400 to-red-500 rounded-full flex items-center justify-center shadow-lg animate-pulse-slow" style="animation-delay: 2s;">
+                                    <i class="fas fa-heart text-white text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Text Content Column -->
+                    <div class="text-center md:text-left md:order-2 order-1">
+                        <h1 class="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-6">
+                            Hi, I'm <span class="text-gradient">Sakshi</span>
+                        </h1>
+                        <h2 class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
+                            <span id="typed-text" class="typing-cursor"></span>
+                        </h2>
+                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed">
+Computer Engineering student focused on building efficient software and web applications. Experienced with Java, web technologies, and database systems.                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <!-- <a href="#projects" class="btn-primary group">
+                                <i class="fas fa-code mr-2 group-hover:animate-pulse"></i>View Projects
+                            </a>
+                            <a href="#contact" class="btn-secondary group">
+                                <i class="fas fa-envelope mr-2 group-hover:animate-bounce"></i>Get In Touch
+                            </a> -->
+                            <a href="images/Sakshi_Sankaye.pdf" download
+     class="px-6 py-3 font-semibold border border-transparent text-white 
+            bg-gradient-to-r from-green-500 via-blue-500 to-purple-600 
+            bg-size-200 bg-pos-0 hover:bg-pos-100
+            shadow-lg transition-all duration-500 ease-in-out">
+    <i class="fas fa-file-download mr-2"></i> Download Resume
+  </a>
+                        </div>
+
+                        <!-- Social Links -->
+               <div class="flex justify-center md:justify-start space-x-6 mt-8">
+    <a href="https://www.linkedin.com/in/sakshi-sankaye-8bb036326/" 
+       class="social-link-hero group text-2xl">
+        <i class="fab fa-linkedin-in group-hover:animate-bounce"></i>
+    </a>
+    <a href="https://github.com/SakshiSankaye" 
+       class="social-link-hero group text-2xl">
+        <i class="fab fa-github group-hover:animate-spin"></i>
+    </a>
+    <a href="https://leetcode.com/u/sakshisankaye/" target="_blank" 
+       class="social-link">
+        <img src="https://leetcode.com/static/images/LeetCode_logo.png" 
+             alt="LeetCode" class="w-8 h-8">
+    </a>
+    <a href="mailto:sankayesakshi@gmail.com" 
+       class="social-link-hero group text-2xl">
+        <i class="fas fa-envelope group-hover:animate-pulse"></i>
+    </a>
+    <a href="tel:+91976558646" 
+       class="social-link-hero group text-2xl">
+        <i class="fas fa-phone group-hover:animate-bounce"></i>
+    </a>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="block">
+                <i class="fas fa-chevron-down text-2xl text-gray-400 hover:text-blue-500 transition-colors"></i>
+            </a>
+        </div>
+    </section>
+    
+
+    <!-- About Section -->
+<section id="about" class="py-20 relative overflow-hidden">
+  <div class="container mx-auto px-6">
+    <!-- Gradient Animated Heading -->
+    <h2 class="text-5xl font-extrabold text-center mb-12 
+               bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 
+               bg-clip-text text-transparent animate-gradient">
+      About Me
+    </h2>
+
+    <div class="max-w-4xl mx-auto">
+      <!-- Glass Card with Animation -->
+      <div class="glass-card p-10 text-center transform scale-95 animate-zoomIn floating">
+  <p class="text-lg text-gray-900 dark:text-gray-100 leading-relaxed">
+   Computer Engineering student with hands-on experience in web development, software projects, and internships. Skilled in Java, web technologies, and database systems, with a strong interest in building scalable applications and continuously learning new technologies.
+  </p>
+
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"> 
+                         <div class="highlight-card">
+                            <i class="fas fa-rocket text-blue-500 text-2xl mb-3"></i>
+                            <h4 class="font-semibold mb-2">Scalable Solutions</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Building efficient and scalable applications</p>
+                        </div> 
+                     <div class="highlight-card">
+                            <i class="fas fa-palette text-purple-500 text-2xl mb-3"></i>
+                            <h4 class="font-semibold mb-2">UI/UX Focus</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Enhanced user engagement by 30%</p>
+                        </div>
+                        <!-- <div class="highlight-card">
+                            <i class="fas fa-brain text-green-500 text-2xl mb-3"></i>
+                            <h4 class="font-semibold mb-2">AI Integration</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">Developed AI-driven applications</p>
+                        </div> -->
+                        <div class="highlight-card">
+                            <i class="fas fa-trophy text-yellow-500 text-2xl mb-3"></i>
+                            <h4 class="font-semibold mb-2">Award Winner</h4>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">1st place in technical hackathon</p>
+                        </div>
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50/50 dark:bg-gray-800/50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-extrabold text-center mb-12 
+           bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 
+           bg-clip-text text-transparent animate-gradient">
+  Skills & Technologies
+</h2>
+
+           <div class="max-w-6xl mx-auto">
+  <div class="flex justify-center mb-8 space-x-4 flex-wrap gap-2">
+  <button class="skill-filter active px-6 py-2 font-semibold text-white text-lg 
+                 rounded-md shadow-md transition-all duration-500 ease-in-out 
+                 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 
+                 hover:from-purple-600 hover:via-indigo-500 hover:to-blue-500"
+          data-filter="all">
+    All
+  </button>
+
+  <button class="skill-filter px-6 py-2 font-semibold text-white text-lg 
+                 rounded-md shadow-md transition-all duration-500 ease-in-out 
+                 bg-gradient-to-r from-indigo-500 via-purple-600 to-blue-500 
+                 hover:from-blue-500 hover:via-purple-600 hover:to-indigo-500"
+          data-filter="Programming">
+    Programming
+  </button>
+
+  <button class="skill-filter px-6 py-2 font-semibold text-white text-lg 
+                 rounded-md shadow-md transition-all duration-500 ease-in-out 
+                 bg-gradient-to-r from-purple-500 via-indigo-600 to-blue-600 
+                 hover:from-blue-600 hover:via-indigo-600 hover:to-purple-500"
+          data-filter="Web">
+    Web
+  </button>
+
+  <button class="skill-filter px-6 py-2 font-semibold text-white text-lg 
+                 rounded-md shadow-md transition-all duration-500 ease-in-out 
+                 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 
+                 hover:from-indigo-700 hover:via-purple-600 hover:to-blue-600"
+          data-filter="Database">
+    Database
+  </button>
+
+  <button class="skill-filter px-6 py-2 font-semibold text-white text-lg 
+                 rounded-md shadow-md transition-all duration-500 ease-in-out 
+                 bg-gradient-to-r from-indigo-600 via-blue-700 to-purple-700 
+                 hover:from-purple-700 hover:via-blue-700 hover:to-indigo-600"
+          data-filter="Mobile">
+    Mobile
+  </button>
+</div>
+
+  <div id="skills-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <!-- Skills will be populated by JavaScript -->
+  </div>
+</div>
+
+
+  <div id="skills-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <!-- Skills will be populated by JavaScript -->
+  </div>
+</div>
+
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-extrabold text-center mb-12 
+           bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 
+           bg-clip-text text-transparent animate-gradient">
+   Projects
+</h2>
+
+            <div class="max-w-6xl mx-auto">
+             <div class="flex justify-center mb-8 space-x-4 flex-wrap gap-2">
+  <button class="project-filter active px-6 py-2 font-semibold text-white text-lg 
+                 rounded-md shadow-md transition-all duration-500 ease-in-out 
+                 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600 
+                 hover:from-purple-600 hover:via-indigo-500 hover:to-blue-500"
+          data-filter="all">
+    All Projects
+  </button>
+
+  <button class="project-filter px-6 py-2 font-semibold text-white text-lg 
+                 rounded-md shadow-md transition-all duration-500 ease-in-out 
+                 bg-gradient-to-r from-indigo-500 via-purple-600 to-blue-500 
+                 hover:from-blue-500 hover:via-purple-600 hover:to-indigo-500"
+          data-filter="Web">
+    Web Apps
+  </button>
+
+  <button class="project-filter px-6 py-2 font-semibold text-white text-lg 
+                 rounded-md shadow-md transition-all duration-500 ease-in-out 
+                 bg-gradient-to-r from-purple-500 via-indigo-600 to-blue-600 
+                 hover:from-blue-600 hover:via-indigo-600 hover:to-purple-500"
+          data-filter="Mobile">
+    Mobile Apps
+  </button>
+
+  <button class="project-filter px-6 py-2 font-semibold text-white text-lg 
+                 rounded-md shadow-md transition-all duration-500 ease-in-out 
+                 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 
+                 hover:from-indigo-700 hover:via-purple-600 hover:to-blue-600"
+          data-filter="UI/UX">
+    UI/UX
+  </button>
+</div>
+
+                <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Projects will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Experience Timeline (Education Removed) -->
+    <section id="experience" class="py-20 bg-gray-50/50 dark:bg-gray-800/50">
+        <div class="container mx-auto px-6">
+         <h2 class="text-5xl font-extrabold text-center mb-12 
+           bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 
+           bg-clip-text text-transparent animate-gradient">
+  Work Experience
+</h2>
+
+
+            <div class="max-w-4xl mx-auto">
+                <div id="timeline" class="relative">
+                    <!-- Timeline will be populated by JavaScript with work experience only -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <!-- <section id="testimonials" class="py-20">
+        <div class="container mx-auto px-6">
+          <h2 class="text-5xl font-extrabold text-center mb-12 
+           bg-gradient-to-r from-blue-500 via-purple-600 to-pink-500 
+           bg-clip-text text-transparent animate-gradient">
+  Testimonials
+</h2>
+
+
+            <div class="max-w-4xl mx-auto">
+                <div class="testimonial-slider relative">
+                    <div class="testimonial-track">
+                        <div class="testimonial-item glass-card p-8 text-center">
+                            <div class="mb-6">
+                                <i class="fas fa-quote-left text-3xl text-blue-500 mb-4"></i>
+                                <p class="text-lg italic text-gray-600 dark:text-gray-300">
+                                    "Sanjivani's dedication to learning and problem-solving skills make her an exceptional developer. 
+                                    Her work on web applications showed remarkable attention to detail."
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <img src="brightinfotech.jpeg" 
+                                     alt="Bright InfoTech" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-white">Bright InfoTech Ltd</h4>
+                                    <p class="text-sm text-gray-500">Industrial Training Supervisor</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-item glass-card p-8 text-center">
+                            <div class="mb-6">
+                                <i class="fas fa-quote-left text-3xl text-blue-500 mb-4"></i>
+                                <p class="text-lg italic text-gray-600 dark:text-gray-300">
+                                    "Outstanding performance during the internship. Sanjivani consistently delivered high-quality 
+                                    work and showed great potential in full-stack development."
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <img src="internslite.png" 
+                                     alt="InternsElite" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <h4 class="font-semibold text-gray-800 dark:text-white">InternsElite</h4>
+                                    <p class="text-sm text-gray-500">Internship Mentor</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="testimonial-prev absolute left-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg hover:shadow-xl transition-all">
+                        <i class="fas fa-chevron-left text-gray-600 dark:text-gray-300"></i>
+                    </button>
+                    <button class="testimonial-next absolute right-4 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-800 rounded-full p-3 shadow-lg hover:shadow-xl transition-all">
+                        <i class="fas fa-chevron-right text-gray-600 dark:text-gray-300"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8">Let's Work Together</h2>
+                <p class="text-xl mb-12 opacity-90">
+                    Ready to bring your ideas to life? Let's discuss your next project.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <div class="text-left">
+                        <h3 class="text-2xl font-semibold mb-6">Get In Touch</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center group">
+                                <i class="fas fa-envelope w-6 mr-4 group-hover:animate-bounce"></i>
+                                <span>sankayesakshi@gmail.com</span>
+                            </div>
+                            <div class="flex items-center group">
+                                <i class="fas fa-phone w-6 mr-4 group-hover:animate-pulse"></i>
+                                <span>+91-976558646</span>
+                            </div>
+                            <div class="flex items-center group">
+                                <i class="fas fa-map-marker-alt w-6 mr-4 group-hover:animate-bounce"></i>
+                                <span>Pune, Maharashtra, India</span>
+                            </div>
+                        </div>
+                        <div class="flex space-x-6 mt-6">
+    <a href="https://www.linkedin.com/in/sakshi-sankaye-8bb036326/" 
+       class="social-link group text-2xl">
+        <i class="fab fa-linkedin-in group-hover:animate-bounce"></i>
+    </a>
+    <a href="https://github.com/SakshiSankaye" 
+       class="social-link group text-2xl">
+        <i class="fab fa-github group-hover:animate-spin"></i>
+    </a>
+    <a href="https://leetcode.com/u/sakshisankaye/" target="_blank" 
+       class="social-link">
+        <img src="https://leetcode.com/static/images/LeetCode_logo.png" 
+             alt="LeetCode" class="w-8 h-8">
+    </a>
+</div>
+
+                    </div>
+                    
+                    <form id="contact-form" class="glass-card-dark p-8">
+                        <div class="grid gap-6">
+                            <div>
+                                <input type="text" id="name" name="name" required placeholder="Your Name"
+                                       class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:border-white/50 transition-colors">
+                            </div>
+                            <div>
+                                <input type="email" id="email" name="email" required placeholder="Your Email"
+                                       class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:border-white/50 transition-colors">
+                            </div>
+                            <div>
+                                <textarea id="message" name="message" rows="4" required placeholder="Your Message"
+                                          class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:border-white/50 resize-none transition-colors"></textarea>
+                            </div>
+                            <button type="submit" class="btn-primary bg-white text-blue-600 hover:bg-gray-100 group">
+                                <i class="fas fa-paper-plane mr-2 group-hover:animate-pulse"></i>Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2023 Sakshi Sankaye. All rights reserved.</p>
+          
+        </div>
+    </footer>
+ 
+    <script src="script.js"></script>
+</body>
+</html>
